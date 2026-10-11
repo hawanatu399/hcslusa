@@ -2481,3 +2481,51 @@ td {
     grid-column: 1/-1;
   }
 }
+
+/* President's photograph */
+.president-visual .president-photo {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #dce5eb;
+}
+
+.president-visual .president-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: -1;
+}
+
+.president-visual .president-photo .portrait-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 28px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(5, 35, 65, 0.88),
+    rgba(5, 35, 65, 0.05) 75%
+  );
+}
+
+.president-visual .president-photo .portrait-overlay span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.president-visual .president-photo .portrait-overlay b {
+  font-size: 30px;
+}
+
+.president-visual .president-photo .portrait-overlay small {
+  font-size: 13px;
+}
