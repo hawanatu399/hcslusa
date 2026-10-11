@@ -1,0 +1,105 @@
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A4D7F"/>
+      <stop offset="0.52" stop-color="#0F7AB2"/>
+      <stop offset="1" stop-color="#0D3F67"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#10A15F"/>
+      <stop offset="1" stop-color="#1FC578"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="520" fill="url(#bg)"/>
+  <circle cx="1300" cy="90" r="165" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="220" cy="130" r="120" fill="rgba(255,255,255,0.06)"/>
+
+  <g>
+    <rect x="0" y="0" width="1600" height="92" fill="rgba(18,85,63,0.7)"/>
+    <text x="800" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800" letter-spacing="1.2">HEALTH CARE SIERRA LEONE USA</text>
+    <g transform="translate(670 23)">
+      <path d="M0 0C0 7 5 12 12 12H18V28H8V42H-8V28H-18V12H-12C-5 12 0 7 0 0Z" fill="#F8475E"/>
+      <path d="M-6 38H6V58H-6Z" fill="#F8475E"/>
+      <path d="M-16 18H16" stroke="#F8475E" stroke-width="3" stroke-linecap="round"/>
+      <path d="M0 8V42" stroke="#F8475E" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(930 23)">
+      <path d="M0 0C0 7 5 12 12 12H18V28H8V42H-8V28H-18V12H-12C-5 12 0 7 0 0Z" fill="#F8475E"/>
+      <path d="M-6 38H6V58H-6Z" fill="#F8475E"/>
+      <path d="M-16 18H16" stroke="#F8475E" stroke-width="3" stroke-linecap="round"/>
+      <path d="M0 8V42" stroke="#F8475E" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="0" y="400" width="1600" height="120" fill="url(#ground)"/>
+    <path d="M0 420H1600" stroke="rgba(255,255,255,0.26)" stroke-width="2"/>
+  </g>
+
+  <g>
+    <g transform="translate(40 255)">
+      <ellipse cx="80" cy="190" rx="81" ry="24" fill="#D5E2E6"/>
+      <circle cx="81" cy="72" r="28" fill="#241E1E"/>
+      <path d="M53 104C53 72 66 58 81 58C97 58 111 71 111 104V118H53V104Z" fill="#F1F4F7"/>
+      <path d="M57 118H105V168H57V118Z" fill="#F5F7FA"/>
+      <path d="M55 120L38 190H80L90 146L99 138L106 149L116 190H158L138 120H55Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(170 240)">
+      <ellipse cx="84" cy="206" rx="86" ry="25" fill="#D5E2E6"/>
+      <circle cx="84" cy="72" r="30" fill="#11252A"/>
+      <path d="M58 104C58 73 70 58 84 58C99 58 112 72 112 104V118H58V104Z" fill="#F1F4F7"/>
+      <path d="M62 118H106V170H62V118Z" fill="#F5F7FA"/>
+      <path d="M60 118L42 190H77L85 146L93 136L102 146L109 190H146L126 118H60Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(325 230)">
+      <ellipse cx="92" cy="214" rx="90" ry="26" fill="#D5E2E6"/>
+      <circle cx="93" cy="72" r="30" fill="#1C1E21"/>
+      <path d="M63 106C63 74 76 58 93 58C109 58 123 74 123 106V122H63V106Z" fill="#F1F4F7"/>
+      <path d="M68 123H120V177H68V123Z" fill="#F5F7FA"/>
+      <path d="M66 124L48 196H80L89 152L98 142L107 152L117 196H153L134 124H66Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(500 220)">
+      <ellipse cx="96" cy="223" rx="94" ry="28" fill="#D5E2E6"/>
+      <circle cx="95" cy="72" r="31" fill="#1C2023"/>
+      <path d="M66 108C66 75 80 58 95 58C111 58 126 74 126 108V124H66V108Z" fill="#F1F4F7"/>
+      <path d="M70 124H122V181H70V124Z" fill="#F5F7FA"/>
+      <path d="M68 124L49 200H82L92 154L99 145L107 154L119 200H155L138 124H68Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(680 215)">
+      <ellipse cx="98" cy="228" rx="96" ry="29" fill="#D5E2E6"/>
+      <circle cx="99" cy="74" r="32" fill="#171B1D"/>
+      <path d="M68 110C68 77 83 60 99 60C116 60 130 77 130 110V128H68V110Z" fill="#F1F4F7"/>
+      <path d="M72 128H126V186H72V128Z" fill="#F5F7FA"/>
+      <path d="M70 128L52 202H87L96 158L104 149L112 158L123 202H160L142 128H70Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(870 225)">
+      <ellipse cx="104" cy="218" rx="96" ry="28" fill="#D5E2E6"/>
+      <circle cx="104" cy="76" r="31" fill="#1B1F22"/>
+      <path d="M74 110C74 79 89 62 104 62C120 62 135 79 135 110V126H74V110Z" fill="#F1F4F7"/>
+      <path d="M78 126H130V184H78V126Z" fill="#F5F7FA"/>
+      <path d="M76 126L55 202H90L101 160L110 150L119 160L130 202H167L145 126H76Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(1060 232)">
+      <ellipse cx="92" cy="212" rx="90" ry="27" fill="#D5E2E6"/>
+      <circle cx="92" cy="76" r="30" fill="#171A1D"/>
+      <path d="M65 110C65 79 78 62 92 62C108 62 121 78 121 110V126H65V110Z" fill="#F1F4F7"/>
+      <path d="M69 126H115V180H69V126Z" fill="#F5F7FA"/>
+      <path d="M66 126L48 196H81L90 150L98 141L105 150L116 196H150L131 126H66Z" fill="#F5F7FA"/>
+    </g>
+
+    <g transform="translate(1235 238)">
+      <ellipse cx="82" cy="206" rx="82" ry="25" fill="#D5E2E6"/>
+      <circle cx="82" cy="72" r="29" fill="#171A1B"/>
+      <path d="M56 104C56 74 68 58 82 58C97 58 110 72 110 104V118H56V104Z" fill="#F1F4F7"/>
+      <path d="M60 118H104V170H60V118Z" fill="#F5F7FA"/>
+      <path d="M58 119L41 186H74L82 142L89 132L97 142L108 186H141L123 119H58Z" fill="#F5F7FA"/>
+    </g>
+  </g>
+</svg>

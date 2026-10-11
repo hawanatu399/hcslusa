@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Programs & Missions</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .program-wrap {
+        padding: 58px 0 90px;
+      }
+      .program-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .program-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 26px;
+      }
+      @media (max-width: 900px) {
+        .program-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="HCSL-USA home">
+        <img src="assets/hcsl-usa-logo.jpg" alt="HCSL-USA logo" />
+        <span
+          ><strong>HEALTH CARE</strong><b>SIERRA LEONE USA</b
+          ><small>Care · Service · Partnership</small></span
+        >
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/news">News</a>
+        <a href="/programs" class="active">Programs</a>
+        <a href="/contact">Contact</a>
+        <a href="/join">Join Us</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/admin" class="btn btn-outline">Admin Login</a>
+        <a href="/join" class="btn btn-red">Join Us <span>↗</span></a>
+      </div>
+    </header>
+
+    <main class="wrap program-wrap">
+      <div class="section-kicker">PROGRAMS & MISSIONS <span></span></div>
+      <h1
+        style="
+          font-size: clamp(2rem, 3vw, 3.3rem);
+          color: var(--navy);
+          margin: 20px 0 26px;
+        "
+      >
+        Focused initiatives for healthcare growth.
+      </h1>
+      <div class="program-grid">
+        <article class="program-card">
+          <span class="category">MEDICAL SUPPORT</span>
+          <h3>Medical volunteerism</h3>
+          <p>
+            Supporting the mobilization of healthcare professionals to offer
+            practical support, expertise and learning where they are most
+            needed.
+          </p>
+        </article>
+        <article class="program-card">
+          <span class="category">TRAINING</span>
+          <h3>Professional mentorship</h3>
+          <p>
+            Creating platforms for mentorship, skills enhancement and leadership
+            development for future healthcare practitioners.
+          </p>
+        </article>
+        <article class="program-card">
+          <span class="category">PARTNERSHIP</span>
+          <h3>Institutional collaboration</h3>
+          <p>
+            Building bridges between local institutions, diaspora professionals,
+            and organizations committed to healthcare improvement.
+          </p>
+        </article>
+        <article class="program-card">
+          <span class="category">COMMUNITY</span>
+          <h3>Public health engagement</h3>
+          <p>
+            Promoting awareness and action around better health outcomes through
+            education and sustained community engagement.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-bottom-inner">
+        <span
+          >© <span id="year"></span> Health Care Sierra Leone USA. All rights
+          reserved.</span
+        >
+        <span
+          >Website designed by
+          <strong>AT&amp;C Technologies SL Ltd</strong></span
+        >
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

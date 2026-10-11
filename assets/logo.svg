@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+<title id="title">HCSL-USA provisional logo</title><desc id="desc">Provisional healthcare cross and heart mark for offline website prototype. Replace with the official HCSL-USA logo before launch.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#102b4b"/><stop offset="1" stop-color="#214f76"/></linearGradient></defs>
+<rect x="4" y="4" width="232" height="232" rx="40" fill="url(#g)"/><circle cx="120" cy="86" r="54" fill="#fff" opacity=".09"/>
+<path d="M106 43h28v28h28v28h-28v28h-28V99H78V71h28z" fill="#fff"/>
+<path d="M120 155c-17-13-34-25-34-40 0-10 7-17 17-17 7 0 13 4 17 10 4-6 10-10 17-10 10 0 17 7 17 17 0 15-17 27-34 40z" fill="#bd2635"/>
+<text x="120" y="190" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#fff">HCSL-USA</text>
+<text x="120" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.1" fill="#d7e2ec">CARE · SERVICE · PARTNERSHIP</text>
+</svg>

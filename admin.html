@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admin-shell {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 28px;
+        padding: 58px 0 90px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+      form {
+        display: grid;
+        gap: 14px;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      input {
+        border: 1px solid #dfe7ef;
+        border-radius: 10px;
+        padding: 12px 14px;
+        font: inherit;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px 10px;
+        border-bottom: 1px solid #e6edf3;
+        font-size: 12px;
+      }
+      th {
+        color: #5d7286;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      .status-pill {
+        display: inline-flex;
+        padding: 5px 8px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .pending {
+        background: #fff4ea;
+        color: #ba5a00;
+      }
+      .approved {
+        background: #eafaf2;
+        color: #1f8656;
+      }
+      @media (max-width: 820px) {
+        .admin-shell {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="HCSL-USA home">
+        <img src="assets/hcsl-usa-logo.jpg" alt="HCSL-USA logo" />
+        <span
+          ><strong>HEALTH CARE</strong><b>SIERRA LEONE USA</b
+          ><small>Care · Service · Partnership</small></span
+        >
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/news">News</a>
+        <a href="/programs">Programs</a>
+        <a href="/contact">Contact</a>
+        <a href="/join">Join Us</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/admin" class="btn btn-outline">Admin Login</a>
+        <a href="/join" class="btn btn-red">Join Us <span>↗</span></a>
+      </div>
+    </header>
+
+    <main class="wrap admin-shell">
+      <aside class="card">
+        <div class="section-kicker">ADMIN <span></span></div>
+        <h1 style="margin: 18px 0; font-size: 2rem; color: var(--navy)">
+          Login
+        </h1>
+        <form id="adminLoginForm">
+          <label
+            >Username<input
+              name="username"
+              type="text"
+              placeholder="Enter admin username"
+              required
+          /></label>
+          <label
+            >Password<input
+              name="password"
+              type="password"
+              placeholder="Enter admin password"
+              required
+          /></label>
+          <button class="btn btn-red" type="submit">Access dashboard</button>
+        </form>
+        <p
+          id="loginStatus"
+          style="
+            margin-top: 14px;
+            color: #b42318;
+            font-weight: 600;
+            display: none;
+          "
+        ></p>
+      </aside>
+
+      <section class="card">
+        <div class="section-kicker">DASHBOARD <span></span></div>
+        <h2 style="margin: 18px 0; color: var(--navy)">Recent registrations</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Interest</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="memberTableBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-bottom-inner">
+        <span
+          >© <span id="year"></span> Health Care Sierra Leone USA. All rights
+          reserved.</span
+        >
+        <span
+          >Website designed by
+          <strong>AT&amp;C Technologies SL Ltd</strong></span
+        >
+      </div>
+    </footer>
+
+    <script>
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+
+      const loginForm = document.getElementById("adminLoginForm");
+      const loginStatus = document.getElementById("loginStatus");
+      const memberTableBody = document.getElementById("memberTableBody");
+
+      async function loadMembers() {
+        try {
+          const response = await fetch("/api/members");
+          const data = await response.json();
+          if (!response.ok || !Array.isArray(data.members))
+            throw new Error("Unable to load members.");
+          memberTableBody.innerHTML =
+            data.members
+              .slice(-8)
+              .reverse()
+              .map(
+                (member) => `
+            <tr>
+              <td>${member.firstName || ""} ${member.lastName || ""}</td>
+              <td>${member.email || ""}</td>
+              <td>${member.phone || ""}</td>
+              <td>${member.interest || "General"}</td>
+              <td><span class="status-pill ${String(member.status || "Pending").toLowerCase()}">${member.status || "Pending"}</span></td>
+            </tr>
+          `,
+              )
+              .join("") || '<tr><td colspan="5">No members found.</td></tr>';
+        } catch (error) {
+          memberTableBody.innerHTML =
+            '<tr><td colspan="5">Unable to load members.</td></tr>';
+        }
+      }
+
+      if (loginForm) {
+        loginForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const payload = Object.fromEntries(new FormData(loginForm).entries());
+          try {
+            const response = await fetch("/api/admin/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.message || "Login failed");
+            loginStatus.style.display = "block";
+            loginStatus.style.color = "#1d7d5a";
+            loginStatus.textContent = data.message || "Login successful.";
+            loadMembers();
+          } catch (error) {
+            loginStatus.style.display = "block";
+            loginStatus.style.color = "#b42318";
+            loginStatus.textContent = error.message || "Login failed.";
+          }
+        });
+      }
+
+      loadMembers();
+    </script>
+  </body>
+</html>

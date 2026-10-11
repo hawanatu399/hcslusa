@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>News & Stories</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .news-wrap {
+        padding: 58px 0 90px;
+      }
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .news-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .news-thumb {
+        height: 200px;
+        background: linear-gradient(135deg, #e7f1ff, #d8ebef);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1a3358;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      .news-copy {
+        padding: 22px;
+      }
+      @media (max-width: 900px) {
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="HCSL-USA home">
+        <img src="assets/hcsl-usa-logo.jpg" alt="HCSL-USA logo" />
+        <span
+          ><strong>HEALTH CARE</strong><b>SIERRA LEONE USA</b
+          ><small>Care · Service · Partnership</small></span
+        >
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/news" class="active">News</a>
+        <a href="/programs">Programs</a>
+        <a href="/contact">Contact</a>
+        <a href="/join">Join Us</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/admin" class="btn btn-outline">Admin Login</a>
+        <a href="/join" class="btn btn-red">Join Us <span>↗</span></a>
+      </div>
+    </header>
+
+    <main class="wrap news-wrap">
+      <div class="section-kicker">NEWS & STORIES <span></span></div>
+      <h1
+        style="
+          font-size: clamp(2rem, 3vw, 3.2rem);
+          color: var(--navy);
+          margin: 20px 0 26px;
+        "
+      >
+        Stories of partnership and impact.
+      </h1>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-thumb">01</div>
+          <div class="news-copy">
+            <span class="category">COMMUNITY</span>
+            <h3>Improving access through local partnerships</h3>
+            <p>
+              HCSL-USA continues to foster collaboration between communities,
+              professionals and institutions to improve healthcare outcomes.
+            </p>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-thumb">02</div>
+          <div class="news-copy">
+            <span class="category">EDUCATION</span>
+            <h3>Building skills for the next generation</h3>
+            <p>
+              Training, mentorship and knowledge-sharing are central to
+              strengthening healthcare capacity across Sierra Leone.
+            </p>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-thumb">03</div>
+          <div class="news-copy">
+            <span class="category">SERVICE</span>
+            <h3>Volunteerism that supports communities</h3>
+            <p>
+              Committed volunteers and professionals help create sustainable
+              support systems for better healthcare access.
+            </p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-bottom-inner">
+        <span
+          >© <span id="year"></span> Health Care Sierra Leone USA. All rights
+          reserved.</span
+        >
+        <span
+          >Website designed by
+          <strong>AT&amp;C Technologies SL Ltd</strong></span
+        >
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
