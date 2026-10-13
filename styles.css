@@ -2529,3 +2529,172 @@ td {
 .president-visual .president-photo .portrait-overlay small {
   font-size: 13px;
 }
+
+/* PRESIDENT SECTION — RIGHT-ALIGNED LAYOUT */
+.president-section {
+  background: #f4f6f9;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.president-section .president-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.85fr) minmax(300px, 1.15fr);
+  gap: 40px;
+  align-items: center;
+
+  /* Position the complete section content on the right */
+  width: min(1000px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.president-section .president-visual {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.president-section .president-photo {
+  position: relative;
+  height: 380px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #dbe4eb;
+  isolation: isolate;
+}
+
+.president-section .president-photo::before {
+  content: none;
+}
+
+.president-section .president-photo img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.president-section .portrait-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 25px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(8, 35, 60, 0.95),
+    rgba(8, 35, 60, 0.05)
+  );
+}
+
+.president-section .portrait-overlay span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.president-section .portrait-overlay b {
+  font-size: 24px;
+  color: #fff;
+}
+
+.president-section .portrait-overlay small {
+  font-size: 12px;
+  color: #edf4fa;
+}
+
+.president-section .red-square {
+  position: absolute;
+  right: -12px;
+  bottom: -12px;
+  width: 75px;
+  height: 75px;
+  background: #e03d4d;
+  z-index: -1;
+}
+
+.president-section .president-copy {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.president-section .president-copy h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.25;
+  color: #113861;
+  margin: 16px 0 20px;
+}
+
+.president-section .president-copy blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+  border-left: 3px solid #e03d4d;
+  padding: 4px 0 4px 20px;
+  color: #3d5368;
+}
+
+.president-section .signature {
+  margin-top: 24px;
+}
+
+.president-section .signature strong,
+.president-section .signature span {
+  display: block;
+}
+
+.president-section .signature strong {
+  font-size: 14px;
+  color: #113861;
+}
+
+.president-section .signature span {
+  font-size: 12px;
+  color: #5b7087;
+  margin-top: 4px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .president-section {
+    padding: 55px 0;
+  }
+
+  .president-section .president-grid {
+    width: calc(100% - 36px);
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .president-section .president-visual {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .president-section .president-photo {
+    height: 350px;
+  }
+
+  .president-section .president-copy h2 {
+    font-size: 29px;
+  }
+
+  .president-section .president-copy blockquote {
+    font-size: 17px;
+  }
+}
