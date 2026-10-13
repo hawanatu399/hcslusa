@@ -136,39 +136,32 @@ $("#registrationForm").addEventListener("submit", (e) => {
   });
   toast("Registration saved locally: " + data.reference);
 });
-$("#loginForm").addEventListener("submit", async (e) => {
+$("#loginForm").addEventListener("submit", (e) => {
   e.preventDefault();
+
   const form = e.currentTarget;
   const formData = Object.fromEntries(new FormData(form).entries());
   const loginError = $("#loginError");
 
-  try {
-    const response = await fetch("/api/admin/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: formData.username,
-        password: formData.password,
-      }),
-    });
-
-    const result = await response.json();
-    if (!response.ok || !result.ok) {
-      throw new Error(result.message || "Login failed.");
-    }
-
+  if (
+    formData.username === ADMIN_USERNAME &&
+    formData.password === ADMIN_PASSWORD
+  ) {
     adminLoggedIn = true;
     loginError.hidden = true;
+
     closeModals();
+
     $("#adminScreen").hidden = false;
     document.body.style.overflow = "hidden";
+
     showAdminView("dashboard");
     renderAdmin();
-    toast("Admin login successful.");
+
+    toast("Admin login successful (offline demo).");
     form.reset();
-  } catch (error) {
-    loginError.textContent =
-      error.message || "Username or password is incorrect.";
+  } else {
+    loginError.textContent = "Username or password is incorrect.";
     loginError.hidden = false;
   }
 });
